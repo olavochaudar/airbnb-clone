@@ -1,21 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className='shadow-md'>
-      <div className='mx-auto flex max-w-7xl items-center justify-between px-8 py-4'>
+    <header className='shadow-md'>
+      <div className='mx-auto flex max-w-7xl items-center justify-between px-8 py-4 sm:px-4'>
         {/* Logo e título */}
-        <div className='flex items-center'>
+        <Link to='/' className='flex items-center'>
           <img
             className='h-12 items-center'
-            src='./public/logocsc.svg'
+            src='/logocsc.svg'
             alt='Logo da Chaudar Software Company'
           />
           <p className='text-primary-400 text-2xl font-bold'>bnb</p>
-        </div>
+        </Link>
 
         {/* Barra de busca */}
-        <div className='flex items-center rounded-full border border-gray-300 py-2 pr-4 pl-4 shadow-md'>
+        <Link
+          to='/'
+          className='hidden lg:flex items-center rounded-full border border-gray-300 py-2 pr-4 pl-4 shadow-md'
+        >
           <p className='border-r border-r-gray-300 px-4'>Qualquer lugar</p>
           <p className='border-r border-r-gray-300 px-4'>Qualquer semana</p>
           <p className='px-4'>Hóspedes</p>
@@ -35,10 +39,13 @@ const Header = () => {
               />
             </svg>
           </div>
-        </div>
+        </Link>
 
         {/* Menu e perfil */}
-        <div className='flex items-center gap-2 rounded-full border border-gray-300 py-2 pr-4 pl-4 shadow-md'>
+        <Link
+          to='/Login'
+          className='flex items-center gap-2 rounded-full border border-gray-300 py-2 pr-4 pl-4 shadow-md'
+        >
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -65,10 +72,10 @@ const Header = () => {
               clipRule='evenodd'
             />
           </svg>
-          <p>Olavo CEO</p>
-        </div>
+          <p className=' sm:max-w-32 truncate max-w-20'>olavo ceo</p>
+        </Link>
       </div>
-    </div>
+    </header>
   );
 };
 
